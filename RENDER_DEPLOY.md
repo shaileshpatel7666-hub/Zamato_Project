@@ -64,7 +64,7 @@ git push origin main
 3. Fill in:
    - **Name**: `zamato-admin`
    - **Build Command**: `cd admin-ace && npm install && npm run build`
-   - **Publish directory**: `admin-ace/.output/public`
+   - **Publish directory**: `admin-ace/.output`
 4. Add Environment Variables:
    ```
    VITE_API_URL = https://zamato-backend.onrender.com/api
