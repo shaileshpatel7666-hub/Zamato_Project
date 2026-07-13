@@ -7,7 +7,7 @@ Use these in Render dashboard or your hosting provider.
 ```
 DB_NAME=defaultdb
 DB_USER=avnadmin
-DB_PASSWORD=AVNS_CZBFYIqLb4Y9w9dXDOH
+DB_PASSWORD=<your_aiven_password>
 DB_HOST=zamato-shaileshpatel7666-b62d.h.aivencloud.com
 DB_PORT=25237
 DB_DIALECT=mysql
