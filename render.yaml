@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: zamato-backend
+    env: node
+    plan: free
+    buildCommand: cd Backend && npm install
+    startCommand: cd Backend && npm start
+    envVars:
+      - key: DB_NAME
+        value: defaultdb
+      - key: DB_USER
+        value: avnadmin
+      - key: DB_HOST
+        value: zamato-shaileshpatel7666-b62d.h.aivencloud.com
+      - key: DB_PORT
+        value: "25237"
+      - key: DB_DIALECT
+        value: mysql
+      - key: DB_SSL
+        value: "true"
+      - key: PORT
+        value: "8001"
+      - key: NODE_ENV
+        value: production
+      - key: DB_PASSWORD
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+
+  - type: static_site
+    name: zamato-frontend
+    buildCommand: cd project && npm install && npm run build
+    staticPublishPath: project/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://zamato-backend.onrender.com/api
+
+  - type: static_site
+    name: zamato-admin
+    buildCommand: cd admin-ace && npm install && npm run build
+    staticPublishPath: admin-ace/.output/public
+    envVars:
+      - key: VITE_API_URL
+        value: https://zamato-backend.onrender.com/api
