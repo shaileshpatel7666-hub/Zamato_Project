@@ -7,8 +7,13 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  preview: {
-    allowedHosts: ['zamato-admin-page.onrender.com', 'localhost', '127.0.0.1']
+  vite: {
+    preview: {
+      allowedHosts: ['*.onrender.com', 'zamato-admin-page.onrender.com', 'localhost', '127.0.0.1']
+    },
+    server: {
+      allowedHosts: ['*.onrender.com', 'zamato-admin-page.onrender.com', 'localhost', '127.0.0.1']
+    }
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
